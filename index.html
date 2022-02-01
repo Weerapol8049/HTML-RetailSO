@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Retail-SO</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/pagination2.css">
+
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="script/navBar.js"></script>
+</head>
+<body>
+    <div class="container">
+    <my-header></my-header>
+    <!-- home section starts  -->
+    <section class="home" id="home">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- DATA TABLE -->
+                    <div class="table-data__tool">
+                        <div class="table-data__tool-right">
+                                <a href="#" class="btnAddItem" onclick="popupToggle('CREATE NEW ORDER');">CREATE NEW ORDER</a>
+                                
+                                <span id="alluser" onclick="alluser();" title="Edit"><i class="fa-solid fa-users"></i></span>
+                        </div>
+                        <!-- Filter -->
+                        <div class="table-data__tool-left">
+                            <div class="search">
+                                <div class="icon"></div>
+                                <div class="input">
+                                    <input type="text" placeholder="Search" id="mysearch" onkeyup="fnSearch(event)">
+                                </div>
+                                <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive table-responsive-data2">
+                        <table class="table table-data2">
+                            <thead>
+                                <tr>
+                                    <th class="sticky-col first-tr-col"></th>
+                                    <th>No.</th>
+                                    <th>วันที่ขาย</th>
+                                    <th class="name">Emp name</th>
+                                    <th>Store</th>
+                                    <th>Pool</th>
+                                    <th>จำนวน</th>
+                                    <th>ยอดเงินรวม</th>
+                                    <th>วันที่ติดตั้ง</th>
+                                    <th>Sales order</th>
+                                    <th>Purch order</th>
+                                    <th class="name">ชื่อลูกค้า</th>
+                                </tr>
+                            </thead>
+                            <tbody id="body-data">
+                                <tr>
+                                    <th scope="row" colspan="12">Loading...</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <div class="layout layout1"></div>
+                        <div class="layout layout2">
+                            <span>Limit</span>
+                            <div class="dropdownPageLimit">
+                                <input type="text" class="txtPageLimit" id="limit" value="10"  readonly>
+                                <div class="option">
+                                    <div onclick="showLimit('10')"> 10</div>
+                                    <div onclick="showLimit('20')"> 20</div>
+                                    <div onclick="showLimit('30')"> 30</div>
+                                    <div onclick="showLimit('50')"> 50</div>
+                                    <div onclick="showLimit('100')"> 100</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layout layout3">
+                            <ul>  </ul>
+                        </div>
+                    </div>
+                    <!-- END DATA TABLE -->
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- home section ends -->
+    <div id="popup">
+        <div class="content">
+            <form action="">
+                <!-- <img src="email.png" > -->
+                <h2 id="title"></h2>
+                <div class="group">
+                    <div class="inputBox">
+                        <div class="bx1">
+                            <p>วันที่ขาย</p>
+                            <input type="date" id="_date" >
+                        </div>
+                        <div class="bx1">
+                            <p>EMP ID</p>
+                            <div class="dropdownEmp">
+                                <input type="text" class="txtEmp" >
+                                <div class="option" id="Employee">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="inputBox">
+                        <div class="bx1">
+                            <p>Store</p>
+                            <div class="dropdownStore">
+                                <input type="text" class="txtStore" name="_store" readonly>
+                                <div class="option1" id="opStore">
+                                
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bx1">
+                            <p>Pool</p>
+                            <div class="dropdownPool">
+                                <input type="text" class="txtPool" readonly>
+                                <div class="option2" id="opPool">
+                                    
+                                </div>
+                            </div>
+                        </div> 
+                    
+                    </div>
+                    <div class="inputBox">
+                        <div class="bx1">
+                            <p>จำนวน</p>
+                            <input type="text" id="txtQty" >
+                        
+                        </div>
+                        
+                        <div class="bx1">
+                            <p>ยอดเงินรวม</p>
+                            <input type="text" id="txtAmount">
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="inputBox">
+                        <div class="bx2">
+                            <p>ชื่อ - นามสกุล</p>
+                            <input type="text" id="txtName">
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <div class="bx3">
+                            <p>Sales order</p>
+                            <input type="text" class="txtSO" id="txtOS">
+                        </div>
+                            
+                        <div class="bx3">
+                            <p>Purchase order</p>
+                            <input type="text" class="txtPO">
+                        </div>
+                        
+                        <div class="bx3">
+                            <p>วันที่ติดตั้ง</p>
+                            <input type="date" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inputBoxBtn">
+                    <input type="button" value="CANCEL" class="btn" onclick="popupToggle('');">
+                    <input type="submit" value="CREATE" class="btn">
+                </div>
+                </div>
+            </form>
+            
+        <a class="close" onclick="popupToggle('');"><img src="image/cancel.png" ></a>
+        
+    </div>
+</div>
+
+<script src="script/pagination.js"></script>
+<script src="script/index.js" type="text/javascript"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+</body>
+</html>

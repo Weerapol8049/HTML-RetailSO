@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+    <link href="css/user.css" rel="stylesheet" media="all">
+</head>
+<body>
+    <div class="container">
+        <!-- header section starts  -->
+        <header class="header">
+            <a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> Retail-SO </a>
+
+            <div class="icons">
+                <div class="fas fa-bars" id="menu-btn"></div>
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-user" id="login-btn"></div>
+            </div>
+        
+            <form action="" class="search-form">
+                <input type="search" id="search-box" placeholder="search here...">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+    
+            <form action="" class="login-form">
+                <h3>login now</h3>
+                <input type="email" placeholder="your email" class="box">
+                <input type="password" placeholder="your password" class="box">
+                <p>forget your password <a href="#">click here</a></p>
+                <p>don't have an account <a href="#">create now</a></p>
+                <input type="submit" value="login now" class="btn">
+            </form>
+        
+        </header>
+        
+        <!-- header section ends -->
+        <div class="container-body">
+            <!-- home section starts  -->
+        <section class="main" id="main">
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- DATA TABLE -->
+                        <!-- <h3 class="title-5 m-b-35">data table</h3> -->
+                        <div class="table-data__tool">
+                            <!-- Filter -->
+                            <div class="table-data__tool-left" style="visibility: hidden;">
+                                <div class="rs-select2--light rs-select2--md">
+                                </div>
+                                <button class="au-btn-filter">
+                                    <i class="zmdi zmdi-filter-list"></i>filters</button>
+                            </div>
+                        
+                        </div>
+                        <div class="table-responsive table-responsive-data2">
+                            <table class="table table-data2">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Name</th>
+                                        <th>Username</th>
+                                        <th>Password</th>
+                                        <th>Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="body-data">
+                                    <tr>
+                                        <th scope="row" colspan="9">Loading...</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- END DATA TABLE -->
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- main section ends -->
+            <!-- Line section starts  -->
+            <section class="line" id="line">
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- DATA TABLE -->
+                        <!-- <h3 class="title-5 m-b-35">data table</h3> -->
+                        <div class="table-data__tool">
+                            <!-- Filter -->
+                            <div class="table-data__tool-left" style="visibility: hidden;">
+                                <div class="rs-select2--light rs-select2--md">
+                                </div>
+                                <button class="au-btn-filter">
+                                    <i class="zmdi zmdi-filter-list"></i>filters</button>
+                            </div>
+                        
+                        </div>
+                        <div class="table-responsive table-responsive-data2">
+                            <table class="table table-data2">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Store</th>
+                                        <th>Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="body-data-store">
+                                    <tr>
+                                        <th scope="row" colspan="9">Loading...</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- END DATA TABLE -->
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Line section ends -->
+        </div>
+        
+    </div>
+
+    <script src="script/user.js"></script>
+</body>
+</html>
